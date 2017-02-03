@@ -11,10 +11,7 @@ import java.util.stream.Stream;
 public class Reader
 {
 
-    public static String[] toStringArray(
-            String path,
-            String delimiterPattern
-    ) throws IOException
+    public static String[] toStringArray(String path, String delimiterPattern) throws IOException
     {
         return Files.lines(Paths.get(path))
                 .flatMap(line -> Stream.of(line.split(delimiterPattern)))
@@ -22,11 +19,4 @@ public class Reader
                 .map(word -> word.toLowerCase())
                 .toArray(String[]::new);
     }
-
 }
-
-// usage:
-// ------------------------
-//   String[] words = 
-//       FileUtility.toStringArray("PathToTheFile.txt", "[^A-Za-z]");
-
