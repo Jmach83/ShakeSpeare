@@ -16,7 +16,7 @@ public class Main
 
     public static void main(String[] args) throws IOException
     {
-        String[] wordArr = Reader.toStringArray("C:/Users/Jmach/Dropbox/4. semester/algoritmer/netbeans/ShakeSpeare/shakespearetext.txt", "[^A-Za-z]");
+        String[] wordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
         System.out.println(Arrays.toString(wordArr));       
     }
 }
