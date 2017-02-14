@@ -18,9 +18,10 @@ public class Main
     {
         Sort sort = new Sort();
         
-        String[] wordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
-        System.out.println(Arrays.toString(wordArr));    
-        //System.out.println(Arrays.toString(sort.insertionSort(wordArr)));
-        System.out.println(Arrays.toString(sort.mergeSort(wordArr)));
+        String[] shortWordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
+        String[] longWordArr = Reader.toStringArray("shakespearetext 2.txt", "[^A-Za-z]");
+        System.out.println(Arrays.toString(longWordArr));    
+        System.out.println(Arrays.toString(sort.insertionSort(shortWordArr)));
+        System.out.println(Arrays.toString(sort.mergeSort(longWordArr)));
     }
 }
