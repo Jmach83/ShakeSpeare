@@ -20,6 +20,7 @@ public class Main
         
         String[] wordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
         System.out.println(Arrays.toString(wordArr));    
-        System.out.println(Arrays.toString(sort.insertionSort(wordArr)));
+        //System.out.println(Arrays.toString(sort.insertionSort(wordArr)));
+        System.out.println(Arrays.toString(sort.mergeSort(wordArr)));
     }
 }
