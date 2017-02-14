@@ -17,6 +17,6 @@ public class Reader
                 .flatMap(line -> Stream.of(line.split(delimiterPattern)))
                 .filter(word -> !word.isEmpty())
                 .map(word -> word.toLowerCase())
-                .toArray(String[]::new);
+                .toArray(String[]::new );
     }
 }

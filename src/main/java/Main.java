@@ -16,7 +16,10 @@ public class Main
 
     public static void main(String[] args) throws IOException
     {
+        Sort sort = new Sort();
+        
         String[] wordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
-        System.out.println(Arrays.toString(wordArr));       
+        System.out.println(Arrays.toString(wordArr));    
+        System.out.println(Arrays.toString(sort.insertionSort(wordArr)));
     }
 }
