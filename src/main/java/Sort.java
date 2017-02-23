@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,7 +14,7 @@ public class Sort
 
     public String[] selectionSort(String[] arr)
     {
-
+        
         for (int i = 0; i < arr.length - 1; i++)
         {
             int min = i;
