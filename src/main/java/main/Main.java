@@ -2,9 +2,8 @@ package main;
 
 import java.io.IOException;
 import java.util.Arrays;
-import sort.InsertionSort;
-import sort.MergeSort;
-import sort.SelectionSort;
+import dataStructure.*;
+import sort.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -28,18 +27,29 @@ public class Main
         String[] shortWordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
         String[] shortWordArr2 = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
         String[] longWordArr = Reader.toStringArray("shakespearetext 2.txt", "[^A-Za-z]");
-        System.out.println(Arrays.toString(longWordArr));
+//        System.out.println(Arrays.toString(longWordArr));
+//        
+//        timer.stopWatch();
+//        System.out.println("selection"+Arrays.toString(selection.selection(shortWordArr)));
+//        System.out.println("Elapsed time: " + timer.elapsedTime());
+//        
+//        timer.stopWatch();
+//        System.out.println("insertion"+Arrays.toString(insertion.insertion(shortWordArr2)));
+//        System.out.println("Elapsed time: " + timer.elapsedTime());
+//        
+//        timer.stopWatch();
+//        System.out.println("merge"+Arrays.toString(merge.mergeSorting(longWordArr)));
+//        System.out.println("Elapsed time: " + timer.elapsedTime());
         
-        timer.stopWatch();
-        System.out.println("selection"+Arrays.toString(selection.selection(shortWordArr)));
-        System.out.println("Elapsed time: " + timer.elapsedTime());
+        LinkedSymbolTable<String, Integer> st = new LinkedSymbolTable<>();
+        for (int i = 0; i < shortWordArr.length; i++)
+        {
+            st.put(shortWordArr[i]);
+        }
+             
         
-        timer.stopWatch();
-        System.out.println("insertion"+Arrays.toString(insertion.insertion(shortWordArr2)));
-        System.out.println("Elapsed time: " + timer.elapsedTime());
         
-        timer.stopWatch();
-        System.out.println("merge"+Arrays.toString(merge.mergeSorting(longWordArr)));
-        System.out.println("Elapsed time: " + timer.elapsedTime());
+        st.print();
+        
     }
 }
