@@ -1,6 +1,10 @@
+package main;
 
 import java.io.IOException;
 import java.util.Arrays;
+import sort.InsertionSort;
+import sort.MergeSort;
+import sort.SelectionSort;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,7 +20,9 @@ public class Main
 
     public static void main(String[] args) throws IOException
     {
-        Sort sort = new Sort();
+        InsertionSort insertion = new InsertionSort();
+        SelectionSort selection = new SelectionSort();
+        MergeSort merge = new MergeSort();
         StopWatch timer = new StopWatch();
         
         String[] shortWordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
@@ -25,15 +31,15 @@ public class Main
         System.out.println(Arrays.toString(longWordArr));
         
         timer.stopWatch();
-        System.out.println("selection"+Arrays.toString(sort.selectionSort(shortWordArr)));
+        System.out.println("selection"+Arrays.toString(selection.selection(shortWordArr)));
         System.out.println("Elapsed time: " + timer.elapsedTime());
         
         timer.stopWatch();
-        System.out.println("insertion"+Arrays.toString(sort.insertionSort(shortWordArr2)));
+        System.out.println("insertion"+Arrays.toString(insertion.insertion(shortWordArr2)));
         System.out.println("Elapsed time: " + timer.elapsedTime());
         
         timer.stopWatch();
-        System.out.println("merge"+Arrays.toString(sort.mergeSort(longWordArr)));
+        System.out.println("merge"+Arrays.toString(merge.mergeSorting(longWordArr)));
         System.out.println("Elapsed time: " + timer.elapsedTime());
     }
 }
