@@ -41,15 +41,24 @@ public class Main
 //        System.out.println("merge"+Arrays.toString(merge.mergeSorting(longWordArr)));
 //        System.out.println("Elapsed time: " + timer.elapsedTime());
         
-        LinkedSymbolTable<String, Integer> st = new LinkedSymbolTable<>();
-        for (int i = 0; i < shortWordArr.length; i++)
-        {
-            st.put(shortWordArr[i]);
+//        LinkedSymbolTable<String, Integer> st = new LinkedSymbolTable<>();
+//        for (int i = 0; i < shortWordArr.length; i++)
+//        {
+//            st.put(shortWordArr[i]);
+//        }
+//             
+//        
+//        
+//        st.print();
+        String[] arr = {"the", "bow", "the"};
+        ArraySymbolTable<String, Integer> ast = new ArraySymbolTable<>();
+        
+        for (int i = 0; i < shortWordArr.length; i++) {
+            ast.put(shortWordArr[i]);
         }
-             
         
-        
-        st.print();
+        System.out.println(ast.print());
+        System.out.println("size " + ast.size());
         
     }
 }
