@@ -15,7 +15,7 @@ public class ArraySymbolTable<Key, Value> {
     private Integer[] values;
     private int n = 0;
 
-    private int startSize = 2;
+    private int startSize = 1;
 
     public ArraySymbolTable() {
         keys = (Key[]) new Object[startSize];
@@ -44,34 +44,36 @@ public class ArraySymbolTable<Key, Value> {
 
         keys = tempkey;
         values = tempval;
+
     }
 
     public void put(Key key) {
 
-        for (int i = 0; i <= n; i++) {
-            // System.out.println("i if");
+        for (int i = 0; i < n; i++) {
+
             if (key.equals(keys[i])) {
-                //    System.out.println("key " + key);
+
                 values[i]++;
-                return;
+
             }
         }
         if (n >= values.length) {
 
             resize(2 * n);
+        } else {
+            values[n] = 1;
+            //  System.out.println("valu " + values[n]);
+            keys[n] = key;
+            //  System.out.println("keysn " + keys[n]);
+            n++;
         }
-        values[n] = 1;
-        //  System.out.println("valu " + values[n]);
-        keys[n] = key;
-        //  System.out.println("keysn " + keys[n]);
-        n++;
     }
 
     public String print() {
         String result = "";
         for (int i = 0; i < n; i++) {
 
-            result += "Key: " + keys[i] + " Value: " + values[i] + " \n";
+            result += "Key: " + keys[i] + "|  Value: " + values[i] + " \n";
         }
         return result;
     }
