@@ -51,14 +51,20 @@ public class Main
 //        
 //        st.print();
         String[] arr = {"the", "bow", "the"};
-        ArraySymbolTable<String, Integer> ast = new ArraySymbolTable<>();
-        
-        for (int i = 0; i < shortWordArr.length; i++) {
-            ast.put(shortWordArr[i]);
+//        ArraySymbolTable<String, Integer> ast = new ArraySymbolTable<>();
+//        
+//        for (int i = 0; i < shortWordArr.length; i++) {
+//            ast.put(shortWordArr[i]);
+//        }
+//        
+//        System.out.println(ast.print());
+//        System.out.println("size " + ast.size());
+
+        HashedSymbolTable<String, Integer> hash = new HashedSymbolTable<>();
+        for (int i = 0; i < shortWordArr2.length; i++) {
+            hash.put(shortWordArr2[i]);
         }
         
-        System.out.println(ast.print());
-        System.out.println("size " + ast.size());
-        
+        hash.print();
     }
 }
